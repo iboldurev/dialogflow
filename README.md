@@ -33,4 +33,7 @@ $query = $client->get('query', [
 $response = json_decode((string) $query->getBody(), true);
 ```
 
+Some examples are describe in the [iboldurev/api-ai-php-example][2] repository.
+
 [1]: https://api.ai
+[2]: https://github.com/iboldurev/api-ai-php-example
