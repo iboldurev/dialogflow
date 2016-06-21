@@ -33,6 +33,25 @@ $query = $client->get('query', [
 $response = json_decode((string) $query->getBody(), true);
 ```
 
+## Usage:
+
+Using the low level `Query`:
+
+```php
+require_once __DIR__.'/vendor/autoload.php';
+
+use Api\Client;
+use Api\Method\Query;
+
+$client = new Client('access_token');
+$queryApi = new Query($client);
+
+$meaning = $queryApi->extractMeaning('Hello', [
+    'sessionId' => '1234567890',
+    'lang' => 'en',
+]);
+```
+
 Some examples are describe in the [iboldurev/api-ai-php-example][2] repository.
 
 [1]: https://api.ai
