@@ -1,0 +1,27 @@
+{
+  "name": "iboldurev/api-ai-php",
+  "description": "API.ai php sdk",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ivan Boldyrev",
+      "email": "iboldurev@gmail.com",
+      "homepage": "https://github.com/iboldurev"
+    }
+  ],
+  "keywords": [
+    "api.ai",
+    "api.ai sdk",
+    "bot"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Api\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.5.0",
+    "guzzlehttp/guzzle": "^6.2"
+  }
+}
