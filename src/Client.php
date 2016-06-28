@@ -1,16 +1,16 @@
 <?php
 
-namespace Api;
+namespace ApiAi;
 
-use Api\HttpClient\HttpClient;
-use Api\HttpClient\GuzzleHttpClient;
-use Api\Exception\BadResponseException;
+use ApiAi\HttpClient\HttpClient;
+use ApiAi\HttpClient\GuzzleHttpClient;
+use ApiAi\Exception\BadResponseException;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Client
  *
- * @package Api
+ * @package ApiAi
  */
 class Client
 {

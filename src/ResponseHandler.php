@@ -1,13 +1,13 @@
 <?php
 
-namespace Api;
+namespace ApiAi;
 
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class ResponseHandler
  *
- * @package Api
+ * @package ApiAi
  */
 trait ResponseHandler
 {

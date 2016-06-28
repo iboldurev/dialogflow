@@ -1,13 +1,13 @@
 <?php
 
-namespace Api\HttpClient;
+namespace ApiAi\HttpClient;
 
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Interface HttpClient
  *
- * @package Api\HttpClient
+ * @package ApiAi\HttpClient
  */
 interface HttpClient
 {

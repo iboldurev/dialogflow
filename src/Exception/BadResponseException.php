@@ -1,13 +1,13 @@
 <?php
 
-namespace Api\Exception;
+namespace ApiAi\Exception;
 
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class BadResponseException
  *
- * @package Api\Exception
+ * @package ApiAi\Exception
  */
 class BadResponseException extends \RuntimeException
 {

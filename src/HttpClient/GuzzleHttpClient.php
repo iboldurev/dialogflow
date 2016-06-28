@@ -1,16 +1,16 @@
 <?php
 
-namespace Api\HttpClient;
+namespace ApiAi\HttpClient;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\RequestOptions;
-use Api\Client;
+use ApiAi\Client;
 
 /**
  * Class GuzzleHttpClient
  *
- * @package Api\HttpClient
+ * @package ApiAi\HttpClient
  */
 class GuzzleHttpClient implements HttpClient
 {

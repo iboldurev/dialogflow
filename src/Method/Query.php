@@ -1,10 +1,15 @@
 <?php
 
-namespace Api\Method;
+namespace ApiAi\Method;
 
-use Api\Client;
-use Api\ResponseHandler;
+use ApiAi\Client;
+use ApiAi\ResponseHandler;
 
+/**
+ * Class Query
+ *
+ * @package ApiAi\Method
+ */
 class Query
 {
     use ResponseHandler;
