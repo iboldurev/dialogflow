@@ -22,15 +22,19 @@ Using the low level `Client`:
 ```php
 require_once __DIR__.'/vendor/autoload.php';
 
-use Api\Client;
+use ApiAi\Client;
 
-$client = new Client('access_token');
+try {
+    $client = new Client('access_token');
 
-$query = $client->get('query', [
-    'query' => 'Hello',
-]);
+    $query = $client->get('query', [
+        'query' => 'Hello',
+    ]);
 
-$response = json_decode((string) $query->getBody(), true);
+    $response = json_decode((string) $query->getBody(), true);
+} catch (\Exception $error) {
+    echo $error->getMessage();
+}
 ```
 
 ## Usage:
@@ -40,16 +44,20 @@ Using the low level `Query`:
 ```php
 require_once __DIR__.'/vendor/autoload.php';
 
-use Api\Client;
-use Api\Method\Query;
+use ApiAi\Client;
+use ApiAi\Method\Query;
 
-$client = new Client('access_token');
-$queryApi = new Query($client);
+try {
+    $client = new Client('access_token');
+    $queryApi = new Query($client);
 
-$meaning = $queryApi->extractMeaning('Hello', [
-    'sessionId' => '1234567890',
-    'lang' => 'en',
-]);
+    $meaning = $queryApi->extractMeaning('Hello', [
+        'sessionId' => '1234567890',
+        'lang' => 'en',
+    ]);
+} catch (\Exception $error) {
+    echo $error->getMessage();
+}
 ```
 
 Some examples are describe in the [iboldurev/api-ai-php-example][2] repository.
