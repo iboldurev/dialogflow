@@ -84,6 +84,10 @@ class Client
      */
     public function __construct($accessToken, HttpClient $httpClient = null, $apiLanguage = self::DEFAULT_API_LANGUAGE, $apiVersion = self::DEFAULT_API_VERSION)
     {
+        if (is_null($accessToken)) {
+            throw new \InvalidArgumentException('Client Access token is missing.');
+        }
+
         $this->accessToken = $accessToken;
         $this->apiLanguage = $apiLanguage;
         $this->apiVersion = $apiVersion;
