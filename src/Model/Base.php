@@ -21,10 +21,6 @@ class Base implements \JsonSerializable
      */
     public function __construct($data = [])
     {
-        if (empty($data)) {
-            throw new \InvalidArgumentException('__construct() $data must be defined');
-        }
-
         $this->data = $data;
     }
 
