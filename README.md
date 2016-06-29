@@ -37,7 +37,7 @@ try {
 }
 ```
 
-## Usage:
+## Usage:   
 
 Using the low level `Query`:
 
@@ -45,16 +45,18 @@ Using the low level `Query`:
 require_once __DIR__.'/vendor/autoload.php';
 
 use ApiAi\Client;
-use ApiAi\Method\Query;
+use ApiAi\Model\Query;
+use ApiAi\Method\QueryApi;
 
 try {
     $client = new Client('access_token');
-    $queryApi = new Query($client);
+    $queryApi = new QueryApi($client);
 
     $meaning = $queryApi->extractMeaning('Hello', [
         'sessionId' => '1234567890',
         'lang' => 'en',
     ]);
+    $response = new Query($meaning);
 } catch (\Exception $error) {
     echo $error->getMessage();
 }
