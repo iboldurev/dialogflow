@@ -6,11 +6,11 @@ use ApiAi\Client;
 use ApiAi\ResponseHandler;
 
 /**
- * Class Query
+ * Class QueryApi
  *
  * @package ApiAi\Method
  */
-class Query
+class QueryApi
 {
     use ResponseHandler;
 
