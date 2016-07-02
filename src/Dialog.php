@@ -43,18 +43,18 @@ class Dialog
      * @param string $sessionId
      * @param string $message
      * @param string $lang
+     *
+     * @return bool|void
      */
     public function create($sessionId, $message, $lang = Client::DEFAULT_API_LANGUAGE)
     {
         try {
             $step = $this->getStep($sessionId, $message, $lang);
         } catch (\Exception $error) {
-            $this->actionMapping->error($sessionId, $error);
-
-            return;
+            return $this->actionMapping->error($sessionId, $error);
         }
 
-        $this->performStep($sessionId, $step);
+        return $this->performStep($sessionId, $step);
     }
 
     /**
@@ -92,17 +92,21 @@ class Dialog
     /**
      * @param string $sessionId
      * @param Step $step
+     *
+     * @return bool
      */
     private function performStep($sessionId, Step $step)
     {
         switch (true) {
             case $step instanceof Action:
-                $this->actionMapping->action($sessionId, $step->getAction(), $step->getParameters());
+                return $this->actionMapping->action($sessionId, $step->getAction(), $step->getParameters());
                 break;
             case $step instanceof Speech:
-                $this->actionMapping->speech($sessionId, $step->getSpeech());
+                return $this->actionMapping->speech($sessionId, $step->getSpeech());
                 break;
         }
+
+        return false;
     }
 
 }
