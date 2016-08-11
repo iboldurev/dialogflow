@@ -38,10 +38,11 @@ class QueryApi
     public function extractMeaning($query, $extraParams = [])
     {
         $query = array_merge($extraParams, [
+            'lang' => $this->client->getApiLanguage(),
             'query' => $query,
         ]);
 
-        $response = $this->client->get('query', $query);
+        $response = $this->client->post('query', $query);
 
         return $this->decodeResponse($response);
     }

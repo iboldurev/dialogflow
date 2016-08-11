@@ -42,14 +42,14 @@ class Dialog
     /**
      * @param string $sessionId
      * @param string $message
-     * @param string $lang
+     * @param array $contexts
      *
      * @return bool|void
      */
-    public function create($sessionId, $message, $lang = Client::DEFAULT_API_LANGUAGE)
+    public function create($sessionId, $message, $contexts = [])
     {
         try {
-            $step = $this->getStep($sessionId, $message, $lang);
+            $step = $this->getStep($sessionId, $message, $contexts);
         } catch (\Exception $error) {
             return $this->actionMapping->error($sessionId, $error);
         }
@@ -60,14 +60,15 @@ class Dialog
     /**
      * @param string $sessionId
      * @param string $message
-     * @param string $lang
+     * @param array $contexts
+     *
      * @return Action|Speech
      */
-    private function getStep($sessionId, $message, $lang)
+    private function getStep($sessionId, $message, $contexts = [])
     {
         $query = $this->queryApi->extractMeaning($message, [
             'sessionId' => $sessionId,
-            'lang' => $lang
+            'contexts' => $contexts,
         ]);
 
         $query = new Query($query);
