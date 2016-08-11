@@ -105,6 +105,14 @@ class Client
     /**
      * @return string
      */
+    public function getApiLanguage()
+    {
+        return $this->apiLanguage;
+    }
+
+    /**
+     * @return string
+     */
     public function getAccessToken()
     {
         return $this->accessToken;
@@ -203,7 +211,6 @@ class Client
     private function getDefaultQuery()
     {
         return [
-            'lang' => $this->apiLanguage,
             'v' => $this->apiVersion,
         ];
     }
