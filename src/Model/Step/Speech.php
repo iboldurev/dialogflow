@@ -2,6 +2,7 @@
 
 namespace ApiAi\Model\Step;
 
+use ApiAi\Model\Context;
 use ApiAi\Model\Step;
 
 /**
@@ -17,13 +18,20 @@ class Speech implements Step
     private $speech;
 
     /**
+     * @var Context[]
+     */
+    private $contexts = [];
+
+    /**
      * Speech constructor.
      *
      * @param string $speech
+     * @param Context[] $contexts
      */
-    public function __construct($speech)
+    public function __construct($speech, array $contexts)
     {
         $this->speech = $speech;
+        $this->contexts = $contexts;
     }
 
     /**
@@ -32,6 +40,14 @@ class Speech implements Step
     public function getSpeech()
     {
         return $this->speech;
+    }
+
+    /**
+     * @return Context[]
+     */
+    public function getContexts()
+    {
+        return $this->contexts;
     }
 
     /**

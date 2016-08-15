@@ -76,15 +76,15 @@ class MyActionMapping extends ActionMapping
     /**
      * @inheritdoc
      */
-    public function action($sessionId, $action, $parameters)
+    public function action($sessionId, $action, $parameters, $contexts)
     {
-        return call_user_func_array(array($this, $action), array($sessionId, $parameters));
+        return call_user_func_array(array($this, $action), array($sessionId, $parameters, $contexts));
     }
 
     /**
      * @inheritdoc
      */
-    public function speech($sessionId, $speech)
+    public function speech($sessionId, $speech, $contexts)
     {
         echo $speech;
     }

@@ -100,10 +100,10 @@ class Dialog
     {
         switch (true) {
             case $step instanceof Action:
-                return $this->actionMapping->action($sessionId, $step->getAction(), $step->getParameters());
+                return $this->actionMapping->action($sessionId, $step->getAction(), $step->getParameters(), $step->getContexts());
                 break;
             case $step instanceof Speech:
-                return $this->actionMapping->speech($sessionId, $step->getSpeech());
+                return $this->actionMapping->speech($sessionId, $step->getSpeech(), $step->getContexts());
                 break;
         }
 

@@ -53,7 +53,11 @@ class StepFactory
      */
     public static function createActionStep(Query $query)
     {
-        return new Action($query->getResult()->getAction(), $query->getResult()->getParameters());
+        return new Action(
+            $query->getResult()->getAction(),
+            $query->getResult()->getParameters(),
+            $query->getResult()->getContexts()
+        );
     }
 
     /**
@@ -63,7 +67,10 @@ class StepFactory
      */
     public static function createSpeechStep(Query $query)
     {
-        return new Speech($query->getResult()->getFulfillment()->getSpeech());
+        return new Speech(
+            $query->getResult()->getFulfillment()->getSpeech(),
+            $query->getResult()->getContexts()
+        );
     }
 
 }

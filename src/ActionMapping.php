@@ -2,6 +2,8 @@
 
 namespace ApiAi;
 
+use ApiAi\Model\Context;
+
 /**
  * Class ActionMapping
  *
@@ -13,14 +15,17 @@ abstract class ActionMapping
      * @param string $sessionId
      * @param string $action
      * @param array $parameters
+     * @param Context[] $contexts
+     * @return
      */
-    abstract public function action($sessionId, $action, $parameters);
+    abstract public function action($sessionId, $action, $parameters, $contexts);
 
     /**
      * @param string $sessionId
      * @param string $speech
+     * @param Context[] $contexts
      */
-    abstract public function speech($sessionId, $speech);
+    abstract public function speech($sessionId, $speech, $contexts);
 
     /**
      * @param string $sessionId

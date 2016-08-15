@@ -2,6 +2,7 @@
 
 namespace ApiAi\Model\Step;
 
+use ApiAi\Model\Context;
 use ApiAi\Model\Step;
 
 /**
@@ -22,15 +23,22 @@ class Action implements Step
     private $parameters;
 
     /**
+     * @var Context[]
+     */
+    private $contexts;
+
+    /**
      * Action constructor.
      *
      * @param string $action
      * @param array $parameters
+     * @param Context[] $contexts
      */
-    public function __construct($action, array $parameters)
+    public function __construct($action, array $parameters, array $contexts)
     {
         $this->action = $action;
         $this->parameters = $parameters;
+        $this->contexts = $contexts;
     }
 
     /**
@@ -47,6 +55,14 @@ class Action implements Step
     public function getParameters()
     {
         return $this->parameters;
+    }
+
+    /**
+     * @return Context[]
+     */
+    public function getContexts()
+    {
+        return $this->contexts;
     }
 
     /**
