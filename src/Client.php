@@ -212,6 +212,7 @@ class Client
     {
         return [
             'v' => $this->apiVersion,
+            'lang' => $this->apiLanguage,
         ];
     }
 
