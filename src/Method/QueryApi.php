@@ -4,6 +4,8 @@ namespace ApiAi\Method;
 
 use ApiAi\Client;
 use ApiAi\ResponseHandler;
+use GuzzleHttp\Promise\PromiseInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class QueryApi
@@ -47,4 +49,19 @@ class QueryApi
         return $this->decodeResponse($response);
     }
 
+    /**
+     * @param $query
+     * @param array $extraParams
+     *
+     * @return PromiseInterface
+     */
+    public function extractMeaningAsync($query, $extraParams = [])
+    {
+        $query = array_merge($extraParams, [
+            'lang' => $this->client->getApiLanguage(),
+            'query' => $query,
+        ]);
+
+        return $this->client->postAsync('query', $query)->then([$this, 'decodeResponse']);
+    }
 }

@@ -38,6 +38,29 @@ class GuzzleHttpClient implements HttpClient
      */
     public function send($method, $uri, $body = null, array $query = [], array $headers = [], array $options = [])
     {
+        $options = $this->prepareOptions($body, $query, $headers, $options);
+        return $this->guzzleClient->request($method, $uri, $options);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function sendAsync($method, $uri, $body = null, array $query = [], array $headers = [], array $options = [])
+    {
+        $options = $this->prepareOptions($body, $query, $headers, $options);
+        return $this->guzzleClient->requestAsync($method, $uri, $options);
+    }
+
+    /**
+     * @param mixed $body
+     * @param array $query
+     * @param array $headers
+     * @param array $options
+     *
+     * @return array
+     */
+    private function prepareOptions($body, array $query, array $headers, array $options)
+    {
         $options = array_merge($options, [
             RequestOptions::QUERY => $query,
             RequestOptions::HEADERS => $headers,
@@ -49,7 +72,6 @@ class GuzzleHttpClient implements HttpClient
             $options[RequestOptions::BODY] = $body;
         }
 
-        return $this->guzzleClient->request($method, $uri, $options);
+        return $options;
     }
-
 }
