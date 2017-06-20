@@ -2,7 +2,7 @@
 
 namespace ApiAi\Model\Webhook;
 
-use ApiAi\Model\QueryResult;
+use ApiAi\Model\Query;
 
 /**
  * Class Request.
@@ -12,6 +12,6 @@ use ApiAi\Model\QueryResult;
  *
  * @package ApiAi\Model\Webhook
  */
-class Request extends QueryResult {
+class Request extends Query {
 
 }
