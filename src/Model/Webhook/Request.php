@@ -7,8 +7,8 @@ use ApiAi\Model\Query;
 /**
  * Class Request.
  *
- * Provide acess to a webhook Request, which reflect the format of response to
- * a query.
+ * Provide access to a webhook Request (which reflects the format of response
+ * to a Api.ai query).
  *
  * @package ApiAi\Model\Webhook
  */
