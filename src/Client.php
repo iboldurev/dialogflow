@@ -17,7 +17,7 @@ class Client
     /**
      * API Base url
      */
-    const API_BASE_URI = 'https://api.api.ai/';
+    const API_BASE_URI = 'https://api.dialogflow.com/';
 
     /**
      * API Version
@@ -50,7 +50,7 @@ class Client
     public static $allowedMethod = ['GET', 'POST'];
 
     /**
-     * @var string Api.ai token
+     * @var string Dialogflow token
      */
     private $accessToken;
 

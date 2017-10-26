@@ -1,6 +1,6 @@
 {
   "name": "iboldurev/api-ai-php",
-  "description": "API.ai php sdk",
+  "description": "Dialogflow php sdk",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -11,9 +11,10 @@
     }
   ],
   "keywords": [
-    "api.ai",
-    "api.ai sdk",
-    "bot"
+    "Dialogflow",
+    "Dialogflow sdk",
+    "bot",
+    "API.AI"
   ],
   "autoload": {
     "psr-4": {
