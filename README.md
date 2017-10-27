@@ -1,4 +1,4 @@
-Api.ai PHP sdk
+Dialogflow PHP sdk
 ==============
 
 [![version][packagist-version]][packagist-url]
@@ -8,10 +8,10 @@ Api.ai PHP sdk
 [packagist-version]: https://img.shields.io/packagist/v/iboldurev/api-ai-php.svg?style=flat
 [packagist-downloads]: https://img.shields.io/packagist/dm/iboldurev/api-ai-php.svg?style=flat
 
-This is an unofficial php sdk for [Api.ai][1] and it's still in progress...
+This is an unofficial php sdk for [Dialogflow][1] and it's still in progress...
 
 ```
-Api.ai: Build brand-unique, natural language interactions for bots, applications and devices.
+Dialogflow: Build brand-unique, natural language interactions for bots, applications and devices.
 ```
 
 ## Install:
@@ -44,7 +44,7 @@ try {
 }
 ```
 
-## Usage:   
+## Usage:
 
 Using the low level `Query`:
 
@@ -95,7 +95,7 @@ class MyActionMapping extends ActionMapping
     {
         echo $speech;
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -107,7 +107,7 @@ class MyActionMapping extends ActionMapping
 
 ```
 
-And using it in the `Dialog` class. 
+And using it in the `Dialog` class.
 
 ```php
 require_once __DIR__.'/vendor/autoload.php';
@@ -122,10 +122,10 @@ try {
     $queryApi = new QueryApi($client);
     $actionMapping = new MyActionMapping();
     $dialog = new Dialog($queryApi, $actionMapping);
-    
+
     // Start dialog ..
     $dialog->create('1234567890', 'Привет', 'ru');
-    
+
 } catch (\Exception $error) {
     echo $error->getMessage();
 }
@@ -134,5 +134,5 @@ try {
 
 Some examples are describe in the [iboldurev/api-ai-php-example][2] repository.
 
-[1]: https://api.ai
+[1]: https://dialogflow.com
 [2]: https://github.com/iboldurev/api-ai-php-example
