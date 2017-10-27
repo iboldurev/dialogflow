@@ -1,14 +1,14 @@
 <?php
 
-namespace ApiAi\Model\Step;
+namespace DialogFlow\Model\Step;
 
-use ApiAi\Model\Context;
-use ApiAi\Model\Step;
+use DialogFlow\Model\Context;
+use DialogFlow\Model\Step;
 
 /**
  * Class Speech
  *
- * @package ApiAi\Model\Step
+ * @package DialogFlow\Model\Step
  */
 class Speech implements Step
 {

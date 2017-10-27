@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiAi\Model;
+namespace DialogFlow\Model;
 
 /**
  * Class Base
  *
- * @package ApiAi\Model
+ * @package DialogFlow\Model
  */
 class Base implements \JsonSerializable
 {

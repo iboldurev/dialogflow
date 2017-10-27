@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiAi\HttpClient;
+namespace DialogFlow\HttpClient;
 
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Interface HttpClient
  *
- * @package ApiAi\HttpClient
+ * @package DialogFlow\HttpClient
  */
 interface HttpClient
 {

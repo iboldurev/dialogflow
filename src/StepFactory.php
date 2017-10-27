@@ -1,17 +1,17 @@
 <?php
 
-namespace ApiAi;
+namespace DialogFlow;
 
-use ApiAi\Model\Query;
-use ApiAi\Model\Step;
-use ApiAi\Model\Step\Action;
-use ApiAi\Model\Step\Speech;
-use ApiAi\Exception\InvalidStepException;
+use DialogFlow\Model\Query;
+use DialogFlow\Model\Step;
+use DialogFlow\Model\Step\Action;
+use DialogFlow\Model\Step\Speech;
+use DialogFlow\Exception\InvalidStepException;
 
 /**
  * Class StepFactory
  *
- * @package ApiAi
+ * @package DialogFlow
  */
 class StepFactory
 {

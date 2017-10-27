@@ -1,16 +1,16 @@
 <?php
 
-namespace ApiAi\HttpClient;
+namespace DialogFlow\HttpClient;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\RequestOptions;
-use ApiAi\Client;
+use DialogFlow\Client;
 
 /**
  * Class GuzzleHttpClient
  *
- * @package ApiAi\HttpClient
+ * @package DialogFlow\HttpClient
  */
 class GuzzleHttpClient implements HttpClient
 {

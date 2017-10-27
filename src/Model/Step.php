@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiAi\Model;
+namespace DialogFlow\Model;
 
 /**
  * Interface Step
  *
- * @package ApiAi\Model
+ * @package DialogFlow\Model
  */
 interface Step
 {

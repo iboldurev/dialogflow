@@ -1,13 +1,13 @@
 <?php
 
-namespace ApiAi;
+namespace DialogFlow;
 
-use ApiAi\Model\Context;
+use DialogFlow\Model\Context;
 
 /**
  * Class ActionMapping
  *
- * @package ApiAi
+ * @package DialogFlow
  */
 abstract class ActionMapping
 {

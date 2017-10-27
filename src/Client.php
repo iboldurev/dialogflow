@@ -1,10 +1,10 @@
 <?php
 
-namespace ApiAi;
+namespace DialogFlow;
 
-use ApiAi\HttpClient\HttpClient;
-use ApiAi\HttpClient\GuzzleHttpClient;
-use ApiAi\Exception\BadResponseException;
+use DialogFlow\HttpClient\HttpClient;
+use DialogFlow\HttpClient\GuzzleHttpClient;
+use DialogFlow\Exception\BadResponseException;
 use GuzzleHttp\Promise\PromiseInterface;
 use function GuzzleHttp\Promise\rejection_for;
 use Psr\Http\Message\ResponseInterface;
@@ -12,7 +12,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Class Client
  *
- * @package ApiAi
+ * @package DialogFlow
  */
 class Client
 {

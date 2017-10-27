@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiAi\Model;
+namespace DialogFlow\Model;
 
 /**
  * Class Fulfillment
  *
- * @package ApiAi\Model
+ * @package DialogFlow\Model
  */
 class Fulfillment extends Base
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiAi\Model;
+namespace DialogFlow\Model;
 
 /**
  * Class Query
  *
- * @package ApiAi\Model
+ * @package DialogFlow\Model
  */
 class Query extends Base
 {

@@ -1,16 +1,16 @@
 <?php
 
-namespace ApiAi\Method;
+namespace DialogFlow\Method;
 
-use ApiAi\Client;
-use ApiAi\ResponseHandler;
+use DialogFlow\Client;
+use DialogFlow\ResponseHandler;
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class QueryApi
  *
- * @package ApiAi\Method
+ * @package DialogFlow\Method
  */
 class QueryApi
 {
