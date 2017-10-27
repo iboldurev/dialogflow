@@ -1,16 +1,16 @@
 <?php
 
-namespace ApiAi\Model\Webhook;
+namespace DialogFlow\Model\Webhook;
 
-use ApiAi\Model\Base;
-use ApiAi\Model\Context;
+use DialogFlow\Model\Base;
+use DialogFlow\Model\Context;
 
 /**
  * Class Response.
  *
  * Data model for a webhook response.
  *
- * @package ApiAi\Model\Webhook
+ * @package DialogFlow\Model\Webhook
  */
 class Response extends Base {
 

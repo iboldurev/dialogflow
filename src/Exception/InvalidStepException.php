@@ -1,13 +1,13 @@
 <?php
 
-namespace ApiAi\Exception;
+namespace DialogFlow\Exception;
 
-use ApiAi\Model\Query;
+use DialogFlow\Model\Query;
 
 /**
  * Class InvalidStepException
  *
- * @package ApiAi\Exception
+ * @package DialogFlow\Exception
  */
 class InvalidStepException extends \RuntimeException
 {

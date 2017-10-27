@@ -1,13 +1,13 @@
 <?php
 
-namespace ApiAi\Exception;
+namespace DialogFlow\Exception;
 
-use ApiAi\Model\Query;
+use DialogFlow\Model\Query;
 
 /**
  * Class DialogException
  *
- * @package ApiAi\Exception
+ * @package DialogFlow\Exception
  */
 class DialogException extends \RuntimeException
 {

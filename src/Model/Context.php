@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiAi\Model;
+namespace DialogFlow\Model;
 
 /**
  * Class Context
  *
- * @package ApiAi\Model
+ * @package DialogFlow\Model
  */
 class Context extends Base
 {
