@@ -91,7 +91,7 @@ $reactGuzzle = new \GuzzleHttp\Client([
     'handler' => HandlerStack::create(new HttpClientAdapter($loop))
 ]);
 
-$client = new Client('bc0a6d712bba4b3c8063a9c7ff0fa4ea', new ApiAi\HttpClient\GuzzleHttpClient($reactGuzzle));
+$client = new Client('bc0a6d712bba4b3c8063a9c7ff0fa4ea', new DialogFlow\HttpClient\GuzzleHttpClient($reactGuzzle));
 $queryApi = new QueryApi($client);
 
 $queryApi->extractMeaningAsync('Hello', [
