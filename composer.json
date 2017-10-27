@@ -1,7 +1,8 @@
 {
-  "name": "iboldurev/api-ai-php",
+  "name": "iboldurev/dialogflow",
   "description": "Dialogflow php sdk",
   "minimum-stability": "stable",
+  "version": "0.3.0",
   "license": "MIT",
   "authors": [
     {
@@ -18,7 +19,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "ApiAi\\": "src/"
+      "DialogFlow\\": "src/"
     }
   },
   "require": {
