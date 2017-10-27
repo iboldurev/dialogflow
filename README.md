@@ -1,12 +1,12 @@
-Dialogflow PHP sdk
+DialogFlow PHP sdk
 ==============
 
 [![version][packagist-version]][packagist-url]
 [![Downloads][packagist-downloads]][packagist-url]
 
-[packagist-url]: https://packagist.org/packages/iboldurev/api-ai-php
-[packagist-version]: https://img.shields.io/packagist/v/iboldurev/api-ai-php.svg?style=flat
-[packagist-downloads]: https://img.shields.io/packagist/dm/iboldurev/api-ai-php.svg?style=flat
+[packagist-url]: https://packagist.org/packages/iboldurev/dialogflow
+[packagist-version]: https://img.shields.io/packagist/v/iboldurev/dialogflow.svg?style=flat
+[packagist-downloads]: https://img.shields.io/packagist/dm/iboldurev/dialogflow.svg?style=flat
 
 This is an unofficial php sdk for [Dialogflow][1] and it's still in progress...
 
@@ -29,7 +29,7 @@ Using the low level `Client`:
 ```php
 require_once __DIR__.'/vendor/autoload.php';
 
-use ApiAi\Client;
+use DialogFlow\Client;
 
 try {
     $client = new Client('access_token');
@@ -51,9 +51,9 @@ Using the low level `Query`:
 ```php
 require_once __DIR__.'/vendor/autoload.php';
 
-use ApiAi\Client;
-use ApiAi\Model\Query;
-use ApiAi\Method\QueryApi;
+use DialogFlow\Client;
+use DialogFlow\Model\Query;
+use DialogFlow\Method\QueryApi;
 
 try {
     $client = new Client('access_token');
@@ -76,9 +76,9 @@ Using the low level asynchronous api:
 ```php
 require_once __DIR__.'/vendor/autoload.php';
 
-use ApiAi\Client;
-use ApiAi\Model\Query;
-use ApiAi\Method\QueryApi;
+use DialogFlow\Client;
+use DialogFlow\Model\Query;
+use DialogFlow\Method\QueryApi;
 use GuzzleHttp\HandlerStack;
 use React\EventLoop\Factory;
 use WyriHaximus\React\GuzzlePsr7\HttpClientAdapter;
@@ -152,9 +152,9 @@ And using it in the `Dialog` class.
 ```php
 require_once __DIR__.'/vendor/autoload.php';
 
-use ApiAi\Client;
-use ApiAi\Method\QueryApi;
-use ApiAi\Dialog;
+use DialogFlow\Client;
+use DialogFlow\Method\QueryApi;
+use DialogFlow\Dialog;
 use Custom\MyActionMapping;
 
 try {
@@ -172,7 +172,4 @@ try {
 
 ```
 
-Some examples are describe in the [iboldurev/api-ai-php-example][2] repository.
-
 [1]: https://dialogflow.com
-[2]: https://github.com/iboldurev/api-ai-php-example
