@@ -5,6 +5,8 @@ namespace ApiAi;
 use ApiAi\HttpClient\HttpClient;
 use ApiAi\HttpClient\GuzzleHttpClient;
 use ApiAi\Exception\BadResponseException;
+use GuzzleHttp\Promise\PromiseInterface;
+use function GuzzleHttp\Promise\rejection_for;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -146,6 +148,17 @@ class Client
     }
 
     /**
+     * @param string $url
+     * @param array $params
+     *
+     * @return PromiseInterface
+     */
+    public function getAsync($url, array $params = [])
+    {
+        return $this->sendAsync('GET', $uri, null, $params);
+    }
+
+    /**
      * @param string $uri
      * @param array $params
      *
@@ -154,6 +167,17 @@ class Client
     public function post($uri, array $params = [])
     {
         return $this->send('POST', $uri, $params);
+    }
+
+    /**
+     * @param string $uri
+     * @param array $params
+     *
+     * @return PromiseInterface
+     */
+    public function postAsync($uri, array $params = [])
+    {
+        return $this->sendAsync('POST', $uri, $params);
     }
 
     /**
@@ -178,6 +202,38 @@ class Client
         $this->validateResponse($this->lastResponse);
 
         return $this->lastResponse;
+    }
+
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param mixed $body
+     * @param array $query
+     * @param array $headers
+     * @param array $options
+     *
+     * @return PromiseInterface
+     */
+    public function sendAsync($method, $uri, $body = null, array $query = [], array $headers = [], array $options = [])
+    {
+        try {
+            $this->validateMethod($method);
+        } catch (\InvalidArgumentException $e) {
+            return rejection_for($e);
+        }
+
+        $query = array_merge($this->getDefaultQuery(), $query);
+        $headers = array_merge($this->getDefaultHeaders(), $headers);
+
+        return $this->client->sendAsync($method, $uri, $body, $query, $headers, $options)->then(
+            function (ResponseInterface $response) {
+                $this->lastResponse = $response;
+
+                $this->validateResponse($this->lastResponse);
+
+                return $this->lastResponse;
+            }
+        );
     }
 
     /**

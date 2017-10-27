@@ -69,6 +69,46 @@ try {
 }
 ```
 
+## Usage
+
+Using the low level asynchronous api:
+
+```php
+require_once __DIR__.'/vendor/autoload.php';
+
+use ApiAi\Client;
+use ApiAi\Model\Query;
+use ApiAi\Method\QueryApi;
+use GuzzleHttp\HandlerStack;
+use React\EventLoop\Factory;
+use WyriHaximus\React\GuzzlePsr7\HttpClientAdapter;
+
+$loop = Factory::create();
+$reactGuzzle = new \GuzzleHttp\Client([
+    'base_uri' => Client::API_BASE_URI . Client::DEFAULT_API_ENDPOINT,
+    'timeout' => Client::DEFAULT_TIMEOUT,
+    'connect_timeout' => Client::DEFAULT_TIMEOUT,
+    'handler' => HandlerStack::create(new HttpClientAdapter($loop))
+]);
+
+$client = new Client('bc0a6d712bba4b3c8063a9c7ff0fa4ea', new ApiAi\HttpClient\GuzzleHttpClient($reactGuzzle));
+$queryApi = new QueryApi($client);
+
+$queryApi->extractMeaningAsync('Hello', [
+    'sessionId' => '123456789',
+    'lang' => 'en'
+])->then(
+    function ($meaning) {
+        $response = new Query($meaning);
+    },
+    function ($error) {
+        echo $error;
+    }
+);
+
+$loop->run();
+```
+
 ## Dialog
 
 The `Dialog` class provides an easy way to use the `query` api and execute automatically the chaining steps :
