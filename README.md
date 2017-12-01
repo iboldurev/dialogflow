@@ -19,7 +19,7 @@ Dialogflow: Build brand-unique, natural language interactions for bots, applicat
 Via composer:
 
 ```
-$ composer require iboldurev/api-ai-php
+$ composer require iboldurev/dialogflow
 ```
 
 ## Usage:
